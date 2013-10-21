@@ -1,4 +1,4 @@
 istanbul-multicam
 =================
 
-Modules for controlling multiple PiCams over Spacebrew.
+Modules for controlling multiple Raspi-Cams over Spacebrew.
