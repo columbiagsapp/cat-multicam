@@ -11,10 +11,10 @@ var Spacebrew = require('./sb-1.3.0').Spacebrew,
 
 // the amount of cameras in each group
 var group_camera_count = [];
-var group_camera_count[0] = 4;
-var group_camera_count[1] = 4;
-var group_camera_count[2] = 4;
-var group_camera_count[3] = 4;
+group_camera_count[0] = 4;
+group_camera_count[1] = 4;
+group_camera_count[2] = 4;
+group_camera_count[3] = 4;
 
 var group_interval_id = [];		// store the setTimeout interval
 var frame_count = [];			// the current frame for each group
