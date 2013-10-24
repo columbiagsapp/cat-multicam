@@ -37,7 +37,7 @@
 			sb.addPublish( "start", "boolean", "false" );
 
 			// override Spacebrew events - this is how you catch events coming from Spacebrew
-			sb.onCustomMessage = onStringMessage;
+			sb.onCustomMessage = onCustomMessage;
 			sb.onOpen = onOpen;
 
 			// connect to spacbrew
