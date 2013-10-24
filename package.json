@@ -1,11 +1,14 @@
 {
-    "name": "camera",
-    "description": "Raspberry Pi camera for taking snapshots",
+    "name": "cat-multicam",
+    "description": "Modules for controlling multiple PiCams over Spacebrew",
     "version": "0.0.1",
     "author": {
         "name": "Troy Conrad Therrien <troyth@gmail.com>",
         "email": "troyth@gmail.com"
     },
+    "contributors":[
+        { "name": "Ebberly Straithairn", "email": "<estraithairn@gmail.com>"}
+    ],
     "dependencies": {
         "ws": "*",
         "colors": "*",
