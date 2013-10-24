@@ -1,0 +1,18 @@
+{
+	"group_0":[
+		"Hello, this is the caption with some <span style=\"color:red;\">html</span>",
+		"Hi, this is another caption with <span style=\"color:red;\">html</span>"
+	],
+	"group_1":[
+		"Hello, this is the caption with some <span style=\"color:red;\">html</span>",
+		"Hi, this is another caption with <span style=\"color:red;\">html</span>"
+	],
+	"group_2":[
+		"Hello, this is the caption with some <span style=\"color:red;\">html</span>",
+		"Hi, this is another caption with <span style=\"color:red;\">html</span>"
+	],
+	"group_3":[
+		"Hello, this is the caption with some <span style=\"color:red;\">html</span>",
+		"Hi, this is another caption with <span style=\"color:red;\">html</span>"
+	]
+}
