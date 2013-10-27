@@ -69,8 +69,16 @@ function tick( group ){
 	if(frame_count[ group ] == 0){
 		var command_name = group + " group capture camera " + (frame_count[ group ] % group_camera_count[ group ]);
 
-		console.log( '\n\ntick() sending command_name: ' + command_name + "\n\n");
 		sb.send( command_name, "boolean", "true");
+
+		console.log([
+			// Timestamp
+			String(+new Date()).grey,
+			// Message
+			String("+++++++ SENT to camera:").cyan,
+			command_name,
+			"true"
+		].join(" "));
 
 		// increment frame counter for this group
 		frame_count[ group ]++;
@@ -79,8 +87,16 @@ function tick( group ){
 
 			var command_name = group + " group capture camera " + (frame_count[ group ] % group_camera_count[ group ]);
 
-			console.log( 'tick() sending command_name: ' + command_name );
 			sb.send( command_name, "boolean", "true");
+
+			console.log([
+				// Timestamp
+				String(+new Date()).grey,
+				// Message
+				String("+++++++ SENT to camera:").cyan,
+				command_name,
+				"true"
+			].join(" "));
 
 			// increment frame counter for this group
 			frame_count[ group ]++;
@@ -90,7 +106,6 @@ function tick( group ){
 
 
 function saveImage( group, value, cap ){
-	console.log("calling saveImage()");
 	var json_value = JSON.parse( value );
 
     var b64_buf = new Buffer(json_value.binary, 'base64').toString('binary');
@@ -98,21 +113,29 @@ function saveImage( group, value, cap ){
 
     //pause to let buffer populate
     setTimeout(function(){
-    	console.log('saveImage: '+ filepath + json_value.filename );
-
     	fs.writeFile(filepath + json_value.filename, buf, 'binary', function(err){
       		if(err){
-	      		console.log("saveImage() threw error: " + err);
-	      		console.log("making directory " + filepath + " and retrying");
+	      		console.log([
+					// Timestamp
+					String(+new Date()).grey,
+					// Message
+					String("!!!!!!! saveImage() threw error:").red,
+					err,
+					"No such directory, running mkdir"
+				].join(" "));
 
 	      		fs.mkdir(filepath, function(){
 	      			//call again after directory has been made
 	      			saveImage( group, value, cap );
 	      		});
 	      	}else{
-	      		console.log(filepath + json_value.filename + ' written');
-		        console.log('sending image_url: ' + hosted_path + json_value.filename);
-		        console.log('sending caption: ' + cap);
+		        console.log([
+					// Timestamp
+					String(+new Date()).grey,
+					// Message
+					String("******* File written:").red,
+					filepath + json_value.filename
+				].join(" "));
 
 		        var message = {
 		        	image_url: hosted_path + json_value.filename,
@@ -123,6 +146,15 @@ function saveImage( group, value, cap ){
 
 		        sb.send( command_name, "message", JSON.stringify( message ) );
 
+		        console.log([
+					// Timestamp
+					String(+new Date()).grey,
+					// Message
+					String("+++++++ SENT to client:").magenta,
+					json_value.filename,
+					cap
+				].join(" "));
+
 		        tick( group );
 	      	} 
     	});
@@ -131,12 +163,20 @@ function saveImage( group, value, cap ){
 
 
 function onCustomMessage( name, value, type){
+	console.log([
+		// Timestamp
+		String(+new Date()).grey,
+		// Message
+		String("------- RECEIVED from camera:").cyan,
+		name.grey,
+		value
+	].join(" "));
+
 	var group,
 		cap;
 
 	switch(name){
 		case "0 group image":
-			console.log("received image from group 0");
 			group = 0;
 			cap = captions.group_0[ frame_count[ group ] ];
 			break;
@@ -162,9 +202,17 @@ function onCustomMessage( name, value, type){
 function onBooleanMessage( name, value){
 	var group;
 
+	console.log([
+		// Timestamp
+		String(+new Date()).grey,
+		// Message
+		String("------- RECEIVED from client:").magenta,
+		name.grey,
+		value
+	].join(" "));
+
 	switch(name){
 		case "0 group start":
-			console.log('0 group start called');
 			group = 0;
 			break;
 		case "1 group start":
