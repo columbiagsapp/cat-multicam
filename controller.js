@@ -36,6 +36,8 @@ sb.addPublish("0 group capture camera 1", "boolean", "false");		// publish the s
 sb.addPublish("0 group capture camera 2", "boolean", "false");		// publish the serialized binary image data
 sb.addPublish("0 group capture camera 3", "boolean", "false");		// publish the serialized binary image data
 
+sb.addPublish("0 group stop camera default", "boolean", "false");
+
 sb.addPublish("0 group frame", "message");		// image and script in JSON message
 
 // Spacebrew Subscribing
