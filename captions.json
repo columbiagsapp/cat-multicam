@@ -1,7 +1,12 @@
 {
 	"group_0":[
-		"Hello, this is the caption with some <span style=\"color:red;\">html</span>",
-		"Hi, this is another caption with <span style=\"color:red;\">html</span>"
+		"Caption 1 - Hello, this is the caption with some <span style=\"color:red;\">html</span>",
+		"Caption 2 - Hi, this is another caption with <span style=\"color:red;\">html</span>",
+		"Caption 3 - <span style=\"color:red;\">This caption is in red</span>",
+		"Caption 4 - <span style=\"color:green;\">This caption is in green</span>",
+		"Caption 5 - <span style=\"color:blue;\">This caption is in blue</span>",
+		"Caption 6 - Hi, this is another caption with <span style=\"color:red;\">html</span>",
+		"Caption 7 - Hello, this is the caption with some <span style=\"color:red;\">html</span>"
 	],
 	"group_1":[
 		"Hello, this is the caption with some <span style=\"color:red;\">html</span>",
