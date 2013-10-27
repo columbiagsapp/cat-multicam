@@ -136,6 +136,7 @@ function onCustomMessage( name, value, type){
 
 	switch(name){
 		case "0 group image":
+			console.log("received image from group 0");
 			group = 0;
 			cap = captions.group_0[ frame_count[ group ] ];
 			break;
