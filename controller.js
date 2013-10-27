@@ -65,16 +65,16 @@ function onOpen() {
 
 
 function tick( group ){
+	console.log("tick()\n");
 	//if first frame, fire immediately, else start timer at frame_rate
 	if(frame_count[ group ] == 0){
 		var command_name = group + " group capture camera " + (frame_count[ group ] % group_camera_count[ group ]);
 
 		sb.send( command_name, "boolean", "true");
 
+		
+
 		console.log([
-			// Timestamp
-			String(+new Date()).grey,
-			// Message
 			String("+++++++ SENT to camera:").cyan,
 			command_name,
 			"true"
@@ -90,9 +90,6 @@ function tick( group ){
 			sb.send( command_name, "boolean", "true");
 
 			console.log([
-				// Timestamp
-				String(+new Date()).grey,
-				// Message
 				String("+++++++ SENT to camera:").cyan,
 				command_name,
 				"true"
