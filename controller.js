@@ -63,6 +63,7 @@ sb.connect();
 
 function onOpen() {
 	console.log( "Connected through Spacebrew as: " + sb.name() + "." );
+	console.log('sending stop false');
 	sb.send("0 group stop camera default", "boolean", "false");
 }
 
