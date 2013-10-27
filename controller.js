@@ -69,7 +69,7 @@ function tick( group ){
 	if(frame_count[ group ] == 0){
 		var command_name = group + " group capture camera " + (frame_count[ group ] % group_camera_count[ group ]);
 
-		console.log( 'tick() sending command_name: ' + command_name );
+		console.log( '\n\ntick() sending command_name: ' + command_name + "\n\n");
 		sb.send( command_name, "boolean", "true");
 
 		// increment frame counter for this group
@@ -90,6 +90,7 @@ function tick( group ){
 
 
 function saveImage( group, value, cap ){
+	console.log("calling saveImage()");
 	var json_value = JSON.parse( value );
 
     var b64_buf = new Buffer(json_value.binary, 'base64').toString('binary');
