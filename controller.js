@@ -162,6 +162,7 @@ function onBooleanMessage( name, value){
 
 	switch(name){
 		case "0 group start":
+			console.log('0 group start called');
 			group = 0;
 			break;
 		case "1 group start":

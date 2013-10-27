@@ -54,6 +54,7 @@
 
 			// auto-restart
 			interval_id = setInterval(function(){
+				console.log('Calling start on interval');
 				sb.send("start", "boolean", "true");
 			}, interval_rate);
 		}
