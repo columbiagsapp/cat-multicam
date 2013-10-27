@@ -5,7 +5,7 @@ var Spacebrew = require('./sb-1.3.0').Spacebrew,
 	sb,
 	config = require("./machine"),
 	captions = require("./captions"),
-	frame_rate = 3000, //take a picture every X ms
+	frame_rate = 1000, //take a picture every X ms
 	fs = require("fs");
 
 
