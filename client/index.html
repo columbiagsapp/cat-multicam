@@ -50,12 +50,17 @@
 		 */
 		function onOpen() {
 			var message = "Connected as <strong>" + sb.name() + "</strong>. ";
-			sb.send("start", "boolean", "true");
+			
+
+			$('#start').click(function(){
+				console.log('Calling start on interval');
+				sb.send("start", "boolean", "true");
+			});
 
 			// auto-restart
 			interval_id = setInterval(function(){
 				console.log('Calling start on interval');
-				sb.send("start", "boolean", "true");
+				//sb.send("start", "boolean", "true");
 			}, interval_rate);
 		}
 
@@ -93,6 +98,7 @@
 	</head>
 
 	<body>
+		<button id="start">Start</button>
 		<img src="">
 		<div id="caption"></div>
 	</body>
