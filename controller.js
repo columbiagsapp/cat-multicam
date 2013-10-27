@@ -166,8 +166,7 @@ function onCustomMessage( name, value, type){
 		String(+new Date()).grey,
 		// Message
 		String("------- RECEIVED from camera:").cyan,
-		name.grey,
-		value
+		name.grey
 	].join(" "));
 
 	var group,
