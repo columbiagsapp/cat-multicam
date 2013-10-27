@@ -83,3 +83,8 @@ img{
    bottom:5%;
    z-index:2;
 }
+
+#start{
+   position:relative;
+   z-index:100;
+}
