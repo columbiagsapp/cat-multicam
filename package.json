@@ -7,7 +7,7 @@
         "email": "troyth@gmail.com"
     },
     "contributors":[
-        { "name": "Ebberly Straithairn", "email": "<estraithairn@gmail.com>"}
+        { "name": "Ebberly Strathairn", "email": "<estrathairn@gmail.com>"}
     ],
     "dependencies": {
         "ws": "*",
